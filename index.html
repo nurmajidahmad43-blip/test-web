@@ -149,79 +149,51 @@
   font-weight: 700;
   color: #007aff;
   margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Grid produk */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  gap: 35px;
 }
 
-/* Kartu produk */
 .card {
-  background: linear-gradient(180deg, #ffffff 0%, #f5f7fa 100%);
-  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #f6f8fa 100%);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-  transition: all 0.35s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
   text-align: center;
+  position: relative;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+  transform: scale(1.03) translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 122, 255, 0.25);
 }
 
-/* Gambar produk */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: radial-gradient(circle at top, rgba(0,122,255,0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.card:hover::before {
+  opacity: 1;
+}
+
 .card img {
   width: 100%;
-  height: 280px;
+  height: 270px;
   object-fit: contain;
   background: #fff;
-  padding: 20px;
-  border-bottom: 1px solid #eee;
-}
-
-/* Deskripsi produk */
-.card-body {
-  padding: 25px 20px;
-}
-
-.card-body h4 {
-  font-size: 1.2rem;
-  color: #222;
-  margin-bottom: 8px;
-}
-
-.card-body .muted {
-  font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 12px;
-}
-
-.card-body .price {
-  color: #007aff;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-/* Tombol beli */
-.btn-buy {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  background: #007aff;
-  color: #fff;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
-
-.btn-buy:hover {
-  background: #005bb5;
-}
-</style>
+  padding: 25px;
+  border-bottom: 1px so
 
     <section id="promo" class="promo">
       <div class="promo-left">
