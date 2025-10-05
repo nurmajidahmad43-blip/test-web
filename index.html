@@ -153,12 +153,14 @@
   letter-spacing: 1px;
 }
 
+/* Grid produk */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 35px;
 }
 
+/* Kartu produk */
 .card {
   background: linear-gradient(180deg, #ffffff 0%, #f6f8fa 100%);
   border-radius: 20px;
@@ -167,13 +169,23 @@
   transition: all 0.4s ease;
   text-align: center;
   position: relative;
+  opacity: 0;
+  transform: translateY(50px);
 }
 
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+/* Hover efek */
 .card:hover {
   transform: scale(1.03) translateY(-6px);
   box-shadow: 0 12px 35px rgba(0, 122, 255, 0.25);
 }
 
+/* Efek bercahaya biru halus */
 .card::before {
   content: "";
   position: absolute;
@@ -187,13 +199,75 @@
   opacity: 1;
 }
 
+/* Gambar produk */
 .card img {
   width: 100%;
   height: 270px;
   object-fit: contain;
   background: #fff;
   padding: 25px;
-  border-bottom: 1px so
+  border-bottom: 1px solid #eee;
+  transition: transform 0.4s ease;
+}
+.card:hover img {
+  transform: scale(1.08);
+}
+
+/* Deskripsi produk */
+.card-body {
+  padding: 25px 20px 35px;
+}
+
+.card-body h4 {
+  font-size: 1.25rem;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.card-body .muted {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 14px;
+}
+
+.card-body .price {
+  color: #007aff;
+  font-weight: 700;
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+}
+
+/* Tombol beli */
+.btn-buy {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  background: #007aff;
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.btn-buy:hover {
+  background: #005bb5;
+  transform: scale(1.05);
+}
+</style>
+
+<script>
+  // Efek muncul saat di-scroll
+  const cards = document.querySelectorAll('.card');
+  const revealCards = () => {
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        card.classList.add('visible');
+      }
+    });
+  };
+  window.addEventListener('scroll', revealCards);
+  window.addEventListener('load', revealCards);
+</script>
 
     <section id="promo" class="promo">
       <div class="promo-left">
