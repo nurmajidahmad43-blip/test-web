@@ -1,225 +1,216 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Soundcore Official — Produk Unggulan</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#f5f7fa;color:#222;scroll-behavior:smooth;}
-header{position:fixed;width:100%;top:0;background:#0a0a0a;color:white;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,0.2);}
-.nav{max-width:1200px;margin:auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;}
-.brand{display:flex;align-items:center;gap:10px;}
-.brand img{width:45px;height:45px;}
-.brand h1{font-size:1.4em;color:#00aaff;}
-nav.menu a{color:white;text-decoration:none;margin:0 15px;transition:0.3s;}
-nav.menu a:hover{color:#00aaff;}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Soundcore Indonesia — Audio Premium</title>
+  <meta name="description" content="Soundcore — audio premium, ANC, earbuds, headphone. Promo terbaru & testimoni pengguna." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--brand:#007bff;--accent:#00aaff;--muted:#6b7280;--bg:#f5f7fa}
+    *{box-sizing:border-box}body{font-family:'Poppins',sans-serif;margin:0;background:var(--bg);color:#0f172a}
+    a{color:inherit}
 
-/* HERO */
-.hero{height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;}
-.hero-slide{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;transition:opacity 1s;}
-.hero-slide.active{opacity:1;}
-.hero .wrap{position:relative;background: rgba(0,0,0,0.5);padding:40px;border-radius:16px;color:white;z-index:2;max-width:600px;margin:auto;}
-.hero h2{font-size:2.5em;margin-bottom:10px;}
-.hero p{font-size:1.1em;margin-bottom:20px;}
-.btn{background:#00aaff;color:white;padding:12px 25px;border-radius:25px;text-decoration:none;font-weight:bold;transition:0.3s;}
-.btn:hover{background:#0088cc;}
-/* Hero Nav Buttons */
-.hero-nav{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:3;}
-.hero-nav span{width:12px;height:12px;border-radius:50%;background:white;opacity:0.5;cursor:pointer;transition:0.3s;}
-.hero-nav span.active{opacity:1;background:#00aaff;}
+    /* Header */
+    header{position:sticky;top:0;background:#fff;z-index:40;box-shadow:0 6px 20px rgba(2,6,23,0.06)}
+    .nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:18px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{height:36px}
+    .brand h1{font-size:18px;margin:0;color:var(--brand)}
+    .menu{display:flex;gap:20px}
+    .menu a{font-weight:600;text-decoration:none;color:#0f172a;opacity:.9}
+    .menu a:hover{color:var(--brand)}
 
-/* PRODUK */
-.section{padding:100px 20px 60px;text-align:center;}
-.section h3{font-size:2em;margin-bottom:40px;color:#222;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;max-width:1100px;margin:auto;}
-.card{background:white;border-radius:16px;box-shadow:0 5px 15px rgba(0,0,0,0.1);overflow:hidden;transition:0.3s;}
-.card:hover{transform:translateY(-8px);}
-.card img{width:100%;height:300px;object-fit:contain;background:#f0f0f0;padding:20px;}
-.card-body{padding:20px;}
-.card-body h4{color:#111;margin-bottom:10px;}
-.card-body .muted{color:#555;font-size:0.95em;margin-bottom:10px;}
-.price{color:#00aaff;font-weight:bold;font-size:1.1em;margin-bottom:10px;}
-.btn-buy{display:inline-block;background:#00aaff;color:white;padding:10px 18px;border-radius:20px;text-decoration:none;font-weight:600;transition:0.3s;}
-.btn-buy:hover{background:#0088cc;}
+    /* Hero */
+    .hero{background:linear-gradient(135deg,var(--brand),var(--accent));color:#fff;padding:80px 20px;text-align:center}
+    .hero .wrap{max-width:1100px;margin:0 auto}
+    .hero h2{font-size:36px;margin-bottom:12px}
+    .hero p{opacity:.95;margin-bottom:22px;font-size:1.05rem}
+    .btn{display:inline-block;background:#fff;color:var(--brand);padding:12px 22px;border-radius:28px;font-weight:700;text-decoration:none}
 
-/* PROMO */
-.promo{background:#00aaff;color:white;padding:60px 20px;border-radius:20px;margin:60px auto;max-width:1100px;text-align:center;}
-.promo h3{font-size:2em;margin-bottom:20px;}
-.promo p{font-size:1.1em;margin-bottom:20px;}
+    /* Products */
+    .section{max-width:1200px;margin:48px auto;padding:0 20px}
+    .section h3{text-align:center;font-size:28px;margin-bottom:18px;color:var(--brand)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+    .card{background:#fff;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.06);overflow:hidden;transition:transform .28s,box-shadow .28s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.08)}
+    .card img{width:100%;height:220px;object-fit:cover}
+    .card-body{padding:16px}
+    .price{color:var(--brand);font-weight:700;margin-top:8px}
 
-/* DUKUNGAN */
-.dukungan{background:#fff;padding:60px 20px;border-radius:20px;margin:60px auto;max-width:1100px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.05);}
-.dukungan h3{font-size:2em;margin-bottom:40px;}
+    /* Promo banner */
+    .promo{margin:36px auto;max-width:1100px;padding:28px;border-radius:16px;background:linear-gradient(90deg,rgba(0,123,255,0.12),rgba(0,170,255,0.06));display:flex;gap:18px;align-items:center}
+    .promo-left{flex:1}
+    .promo h4{font-size:20px;color:var(--brand);margin:0 0 6px}
+    .promo p{margin:0 0 12px;color:var(--muted)}
 
-/* TESTIMONI */
-.testimoni{background:#f0f4f8;padding:60px 20px;border-radius:20px;margin:60px auto;max-width:1100px;text-align:center;position:relative;overflow:hidden;}
-.testimoni h3{font-size:2em;margin-bottom:40px;}
-.testimonial-slide{display:none;transition:opacity 1s;}
-.testimonial-slide.active{display:block;}
-.testimonial-card{background:white;padding:20px;border-radius:16px;box-shadow:0 4px 10px rgba(0,0,0,0.1);margin:auto;max-width:600px;}
-.testimonial-card p{font-style:italic;margin-bottom:10px;}
-.testimonial-card h4{color:#00aaff;}
-.testi-nav{margin-top:20px;display:flex;justify-content:center;gap:10px;}
-.testi-nav button{padding:8px 16px;border:none;background:#00aaff;color:white;border-radius:20px;cursor:pointer;transition:0.3s;}
-.testi-nav button:hover{background:#0088cc;}
+    /* Testimonials */
+    .testi-wrap{max-width:1100px;margin:36px auto;padding:0 20px}
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .testi{background:#fff;border-radius:12px;padding:16px;box-shadow:0 8px 24px rgba(2,6,23,0.04)}
+    .testi .who{display:flex;align-items:center;gap:12px}
+    .avatar{width:48px;height:48px;border-radius:999px;background:#e6eef9;display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:var(--brand)}
+    .stars{color:#f59e0b;margin-top:8px}
+    .quote{color:var(--muted);margin-top:10px;font-size:.95rem}
 
-/* KONTAK */
-.contact{background:#fff;padding:60px 20px;border-radius:20px;margin:60px auto;max-width:1100px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.05);}
-.contact h3{font-size:2em;margin-bottom:20px;}
-.contact p{margin-bottom:10px;}
+    /* WhatsApp card (Dukungan) */
+    .wa-card{max-width:860px;margin:36px auto;padding:22px;border-radius:14px;background:#fff;display:flex;gap:18px;align-items:center;box-shadow:0 16px 40px rgba(2,6,23,0.06)}
+    .wa-icon{width:96px;height:96px;border-radius:18px;background:linear-gradient(180deg,#e6ffef,#d4f8e5);display:flex;align-items:center;justify-content:center}
+    .wa-icon svg{width:46px;height:46px;color:#0f9d58}
+    .wa-body{flex:1}
+    .wa-body h4{margin:0;color:var(--brand);font-size:20px}
+    .wa-body p{color:var(--muted);margin:8px 0 12px}
+    .wa-cta{display:flex;gap:12px}
+    .wa-btn{background:#0f9d58;color:#fff;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700}
+    .wa-btn:hover{filter:brightness(.95);transform:translateY(-2px)}
 
-/* FOOTER */
-footer{background:#0a0a0a;color:#aaa;text-align:center;padding:25px 10px;margin-top:60px;}
+    /* Footer */
+    footer{background:#0b1220;color:#cbd5e1;padding:36px 20px;margin-top:40px}
+    .foot-inner{max-width:1200px;margin:0 auto;display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start}
+    .foot-col{flex:1;min-width:180px}
+    .foot-col h5{color:#fff;margin-bottom:10px}
+    .copyright{text-align:center;margin-top:18px;color:#94a3b8}
 
-@media(max-width:768px){.hero h2{font-size:1.8em;}.hero p{font-size:1em;} nav.menu{display:flex;flex-wrap:wrap;justify-content:center;} nav.menu a{margin:8px;}}
-</style>
+    /* small screens */
+    @media (max-width:720px){.wa-card{flex-direction:column;align-items:flex-start}.promo{flex-direction:column;align-items:flex-start}.hero h2{font-size:28px}}
+  </style>
 </head>
 <body>
-<header>
-  <div class="nav">
-    <div class="brand">
-      <img src="logo.png" alt="Soundcore">
-      <h1>Soundcore</h1>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <img src="logo.png" alt="Soundcore">
+        <h1>Soundcore</h1>
+      </div>
+      <nav class="menu">
+        <a href="#home">Beranda</a>
+        <a href="#produk">Produk</a>
+        <a href="#promo">Promo</a>
+        <a href="#dukungan">Dukungan</a>
+        <a href="#contact">Kontak</a>
+      </nav>
     </div>
-    <nav class="menu">
-      <a href="#home">Beranda</a>
-      <a href="#produk">Produk</a>
-      <a href="#promo">Promo</a>
-      <a href="#dukungan">Dukungan</a>
-      <a href="#testimoni">Testimoni</a>
-      <a href="#contact">Kontak</a>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<main>
-<!-- HERO SLIDER -->
-<section id="home" class="hero">
-  <div class="hero-slide active" style="background-image:url('banner1.jpg');">
-    <div class="wrap">
-      <h2>Soundcore Space Q45 — Surround Sound & ANC</h2>
-      <p>Memukau setiap nada. Teknologi ANC canggih & baterai 50 jam.</p>
-      <a class="btn" href="#produk">Lihat Produk</a>
-    </div>
-  </div>
-  <div class="hero-slide" style="background-image:url('banner2.jpg');">
-    <div class="wrap">
-      <h2>Liberty 4 Earbuds — Suara Jernih</h2>
-      <p>Desain ringan & nyaman + pengisian cepat 10 menit untuk jam pemakaian ekstra.</p>
-      <a class="btn" href="#produk">Lihat Produk</a>
-    </div>
-  </div>
-  <div class="hero-nav">
-    <span class="active" onclick="setHeroSlide(0)"></span>
-    <span onclick="setHeroSlide(1)"></span>
-  </div>
-</section>
+  <main>
+    <section id="home" class="hero">
+      <div class="wrap">
+        <h2>Suara yang Menghidupkan Momen</h2>
+        <p>Teknologi ANC terbaru, audio high‑resolution, dan desain nyaman — temukan koleksi Soundcore terbaik kami.</p>
+        <a class="btn" href="#produk">Jelajahi Produk</a>
+      </div>
+    </section>
 
-<!-- PRODUK -->
-<section id="produk" class="section">
-  <h3>Produk Unggulan</h3>
-  <div class="grid">
-    <div class="card">
-      <img src="liberty4.png" alt="Liberty 4">
-      <div class="card-body">
-        <h4>Soundcore Liberty 4nc</h4>
-        <p class="muted">Earbuds true wireless — ANC adaptif & spatial audio</p>
-        <div class="price">Rp 2.499.000</div>
-        <a href="#" class="btn-buy">Beli Sekarang</a>
+    <section id="produk" class="section">
+      <h3>Produk Unggulan</h3>
+      <div class="grid">
+        <article class="card">
+          <img src="liberty4.png" alt="Liberty 4">
+          <div class="card-body">
+            <h4>Soundcore Liberty 4nc</h4>
+            <p class="muted">Earbuds true wireless — ANC adaptif & spatial audio</p>
+            <div class="price">Rp 2.499.000,00</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="lifeq35.png" alt="Life Q35">
+          <div class="card-body">
+            <h4>Soundcore Life Q35</h4>
+            <p class="muted">Headphone over‑ear — Hi‑Res Audio & nyaman dipakai lama</p>
+            <div class="price">Rp 1.299.000</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="r50i.png" alt="R50i">
+          <div class="card-body">
+            <h4>Soundcore R50i</h4>
+            <p class="muted">Earbuds ringkas — bass punchy & baterai tahan lama</p>
+            <div class="price">Rp 599.000</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="promo" class="promo">
+      <div class="promo-left">
+        <h4>Promo Eksklusif: Oktober Sale</h4>
+        <p>Dapatkan diskon hingga 30% untuk produk pilihan + gratis ongkir khusus hari ini.</p>
+        <div style="display:flex;gap:12px;align-items:center">
+          <a class="btn" href="#produk">Belanja Sekarang</a>
+          <span style="color:var(--muted);font-weight:600">Kode: OCTSOUND25</span>
+        </div>
+      </div>
+      <div style="min-width:240px;text-align:center">
+        <img src="https://images.unsplash.com/photo-1518441902110-8feb3b3f483b?auto=format&fit=crop&w=700&q=60" alt="promo" style="width:220px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.08)">
+      </div>
+    </section>
+
+    <section id="dukungan" class="section">
+      <div class="wa-card">
+        <div class="wa-icon" aria-hidden>
+          <!-- WhatsApp SVG icon -->
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.52 3.478A11.957 11.957 0 0012 0C5.373 0 .002 5.373 0 12c0 2.118.555 4.177 1.607 6.005L0 24l6.56-1.652A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12 0-3.207-1.237-6.208-3.48-8.522z" fill="#25D366"/>
+            <path d="M17.224 14.24c-.303-.152-1.786-.88-2.062-.98-.276-.102-.477-.152-.678.152-.2.303-.778.98-.954 1.18-.176.2-.352.226-.654.075-.303-.15-1.278-.466-2.433-1.498-.9-.802-1.508-1.793-1.684-2.096-.176-.303-.019-.466.134-.618.138-.137.303-.352.455-.529.152-.176.203-.303.304-.504.102-.2.05-.377-.025-.53-.075-.152-.678-1.634-.93-2.235-.245-.588-.494-.51-.678-.52l-.579-.01c-.2 0-.525.074-.8.377-.276.303-1.054 1.03-1.054 2.51 0 1.481 1.08 2.916 1.23 3.116.152.2 2.127 3.244 5.157 4.546 3.03 1.303 3.03.868 3.573.815.542-.05 1.764-.715 2.014-1.404.251-.69.251-1.283.176-1.404-.075-.12-.276-.176-.58-.328z" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="wa-body">
+          <h4>Hai! Butuh bantuan? Yuk chat kami di WhatsApp 😄</h4>
+          <p>Tim Soundcore siap membantu — tanya produk, cek stok, atau klaim garansi. Balas cepat 24/7.</p>
+          <div class="wa-cta">
+            <a class="wa-btn" href="https://wa.me/62895401563386" target="_blank" rel="noopener noreferrer">Chat Sekarang</a>
+            <a class="wa-btn" href="#produk" style="background:#e6f7ff;color:var(--brand);font-weight:700">Lihat Produk</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testi-wrap">
+      <h3>Testimoni Pengguna</h3>
+      <div class="testi-grid">
+        <div class="testi">
+          <div class="who"><div class="avatar">AR</div><div><strong>Ari R.</strong><div style="font-size:.85rem;color:var(--muted)">Jakarta</div></div></div>
+          <div class="stars">★★★★★</div>
+          <div class="quote">"Bassnya mantap, ANC-nya bekerja sangat baik saat di perjalanan. Baterai tahan lama!"</div>
+        </div>
+
+        <div class="testi">
+          <div class="who"><div class="avatar">SP</div><div><strong>Siti P.</strong><div style="font-size:.85rem;color:var(--muted)">Bandung</div></div></div>
+          <div class="stars">★★★★★</div>
+          <div class="quote">"Nyaman dipakai lama, suaranya jernih. Customer service juga cepat respon."</div>
+        </div>
+
+        <div class="testi">
+          <div class="who"><div class="avatar">GA</div><div><strong>Galang A.</strong><div style="font-size:.85rem;color:var(--muted)">Surabaya</div></div></div>
+          <div class="stars">★★★★★</div>
+          <div class="quote">"Desain premium dan value untuk harga. Highly recommended!"</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-col">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Soundcore_logo.svg/2560px-Soundcore_logo.svg.png" alt="Soundcore" style="height:34px;margin-bottom:8px">
+        <p style="color:var(--muted)">Soundcore Indonesia — audio berkualitas, garansi resmi.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Produk</h5>
+        <ul style="list-style:none;padding:0;margin:0;color:var(--muted)"><li>Headphone</li><li>Earbuds</li><li>Aksesoris</li></ul>
+      </div>
+      <div class="foot-col">
+        <h5>Kontak</h5>
+        <p style="color:var(--muted)">WA: +62 895-4015-63386<br>support@soundcore.example</p>
       </div>
     </div>
-    <div class="card">
-      <img src="lifeq35.png" alt="Life Q35">
-      <div class="card-body">
-        <h4>Soundcore Life Q35</h4>
-        <p class="muted">Headphone over-ear — Hi-Res Audio & nyaman dipakai lama</p>
-        <div class="price">Rp 1.299.000</div>
-        <a href="#" class="btn-buy">Beli Sekarang</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="r50i.png" alt="R50i">
-      <div class="card-body">
-        <h4>Soundcore R50i</h4>
-        <p class="muted">Earbuds ringan — Suara jernih, bass bertenaga, dan tahan lama</p>
-        <div class="price">Rp 499.000</div>
-        <a href="#" class="btn-buy">Beli Sekarang</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="copyright">© <span id="year"></span> Soundcore Indonesia. Semua hak cipta dilindungi.</div>
+  </footer>
 
-<!-- PROMO -->
-<section id="promo" class="promo">
-  <h3>Promo Spesial Oktober 🎉</h3>
-  <p>Diskon hingga 30% + Gratis Ongkir seluruh Indonesia! Segera klaim penawaran eksklusifmu.</p>
-  <a href="#produk" class="btn">Klaim Sekarang</a>
-</section>
-
-<!-- DUKUNGAN -->
-<section id="dukungan" class="dukungan">
-  <h3>Dukungan & Garansi</h3>
-  <p>Garansi resmi 2 tahun dan layanan pelanggan 24/7 untuk pengalaman audio terbaik Anda.</p>
-</section>
-
-<!-- TESTIMONI -->
-<section id="testimoni" class="testimoni">
-  <h3>Testimoni Pelanggan</h3>
-  <div class="testimonial-slide active">
-    <div class="testimonial-card">
-      <p>"Soundcore Space Q45 benar-benar mengubah pengalaman mendengarku!"</p>
-      <h4>- Raka, Jakarta</h4>
-    </div>
-  </div>
-  <div class="testimonial-slide">
-    <div class="testimonial-card">
-      <p>"Liberty 4 nyaman dipakai seharian dan kualitas suara luar biasa."</p>
-      <h4>- Dita, Bandung</h4>
-    </div>
-  </div>
-  <div class="testi-nav">
-    <button onclick="prevTesti()">Prev</button>
-    <button onclick="nextTesti()">Next</button>
-  </div>
-</section>
-
-<!-- KONTAK -->
-<section id="contact" class="contact">
-  <h3>Kontak Kami</h3>
-  <p>Telp/WA: +62 895-4015-63386</p>
-  <p>Email: support@soundcore.co.id</p>
-  <p>Alamat: Jl. Harmoni No.12, Jakarta</p>
-</section>
-
-<footer>
-  &copy; <span id="year"></span> Soundcore — Semua hak cipta dilindungi.
-</footer>
-
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// HERO SLIDER
-let heroIndex = 0;
-const heroSlides = document.querySelectorAll('.hero-slide');
-const heroBullets = document.querySelectorAll('.hero-nav span');
-function setHeroSlide(index){
-  heroSlides.forEach(s=>s.classList.remove('active'));
-  heroBullets.forEach(b=>b.classList.remove('active'));
-  heroSlides[index].classList.add('active');
-  heroBullets[index].classList.add('active');
-  heroIndex = index;
-}
-function nextHero(){setHeroSlide((heroIndex+1)%heroSlides.length);}
-setInterval(nextHero,5000);
-
-// TESTIMONI SLIDER
-let testiIndex = 0;
-const testiSlides = document.querySelectorAll('.testimonial-slide');
-function showTestiSlide(){testiSlides.forEach(s=>s.classList.remove('active')); testiSlides[testiIndex].classList.add('active');}
-function nextTesti(){testiIndex=(testiIndex+1)%testiSlides.length; showTestiSlide();}
-function prevTesti(){testiIndex=(testiIndex-1+testiSlides.length)%testiSlides.length; showTestiSlide();}
-</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
