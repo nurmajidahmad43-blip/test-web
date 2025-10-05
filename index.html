@@ -8,8 +8,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{--brand:#007bff;--accent:#00aaff;--muted:#6b7280;--bg:#f5f7fa}
-    *{box-sizing:border-box}body{font-family:'Poppins',sans-serif;margin:0;background:var(--bg);color:#0f172a}
-    a{color:inherit}
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif;}
+    body{background:var(--bg);color:#0f172a}
+    a{color:inherit;text-decoration:none}
 
     /* Header */
     header{position:sticky;top:0;background:#fff;z-index:40;box-shadow:0 6px 20px rgba(2,6,23,0.06)}
@@ -18,7 +19,7 @@
     .brand img{height:36px}
     .brand h1{font-size:18px;margin:0;color:var(--brand)}
     .menu{display:flex;gap:20px}
-    .menu a{font-weight:600;text-decoration:none;color:#0f172a;opacity:.9}
+    .menu a{font-weight:600;opacity:.9}
     .menu a:hover{color:var(--brand)}
 
     /* Hero */
@@ -26,7 +27,7 @@
     .hero .wrap{max-width:1100px;margin:0 auto}
     .hero h2{font-size:36px;margin-bottom:12px}
     .hero p{opacity:.95;margin-bottom:22px;font-size:1.05rem}
-    .btn{display:inline-block;background:#fff;color:var(--brand);padding:12px 22px;border-radius:28px;font-weight:700;text-decoration:none}
+    .btn{display:inline-block;background:#fff;color:var(--brand);padding:12px 22px;border-radius:28px;font-weight:700}
 
     /* Products */
     .section{max-width:1200px;margin:48px auto;padding:0 20px}
@@ -34,15 +35,25 @@
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
     .card{background:#fff;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.06);overflow:hidden;transition:transform .28s,box-shadow .28s}
     .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.08)}
-    .card img{width:100%;height:220px;object-fit:cover}
+    .card img{width:100%;height:auto;object-fit:contain}
     .card-body{padding:16px}
     .price{color:var(--brand);font-weight:700;margin-top:8px}
 
-    /* Promo banner */
-    .promo{margin:36px auto;max-width:1100px;padding:28px;border-radius:16px;background:linear-gradient(90deg,rgba(0,123,255,0.12),rgba(0,170,255,0.06));display:flex;gap:18px;align-items:center}
-    .promo-left{flex:1}
-    .promo h4{font-size:20px;color:var(--brand);margin:0 0 6px}
-    .promo p{margin:0 0 12px;color:var(--muted)}
+    /* Promo banner full-width */
+    .promo{
+      display:flex;
+      gap:24px;
+      padding:32px;
+      border-radius:16px;
+      background:linear-gradient(90deg,rgba(0,123,255,0.12),rgba(0,170,255,0.06));
+      align-items:flex-start;
+      flex-wrap:wrap;
+      max-width:1100px;
+      margin:36px auto;
+    }
+    .promo-left{flex:1 1 320px}
+    .promo-right{flex:1 1 480px;display:flex;justify-content:center;align-items:center;width:100%}
+    .promo-right img{width:100%;max-width:600px;height:auto;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.08)}
 
     /* Testimonials */
     .testi-wrap{max-width:1100px;margin:36px auto;padding:0 20px}
@@ -60,8 +71,8 @@
     .wa-body{flex:1}
     .wa-body h4{margin:0;color:var(--brand);font-size:20px}
     .wa-body p{color:var(--muted);margin:8px 0 12px}
-    .wa-cta{display:flex;gap:12px}
-    .wa-btn{background:#0f9d58;color:#fff;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700}
+    .wa-cta{display:flex;gap:12px;flex-wrap:wrap}
+    .wa-btn{background:#0f9d58;color:#fff;padding:12px 18px;border-radius:12px;font-weight:700}
     .wa-btn:hover{filter:brightness(.95);transform:translateY(-2px)}
 
     /* Footer */
@@ -72,7 +83,12 @@
     .copyright{text-align:center;margin-top:18px;color:#94a3b8}
 
     /* small screens */
-    @media (max-width:720px){.wa-card{flex-direction:column;align-items:flex-start}.promo{flex-direction:column;align-items:flex-start}.hero h2{font-size:28px}}
+    @media (max-width:720px){
+      .wa-card{flex-direction:column;align-items:flex-start}
+      .promo{flex-direction:column;padding:24px}
+      .promo-right img{max-width:100%}
+      .hero h2{font-size:28px}
+    }
   </style>
 </head>
 <body>
@@ -93,6 +109,7 @@
   </header>
 
   <main>
+    <!-- Hero -->
     <section id="home" class="hero">
       <div class="wrap">
         <h2>Suara yang Menghidupkan Momen</h2>
@@ -101,6 +118,7 @@
       </div>
     </section>
 
+    <!-- Produk -->
     <section id="produk" class="section">
       <h3>Produk Unggulan</h3>
       <div class="grid">
@@ -133,24 +151,25 @@
       </div>
     </section>
 
+    <!-- Promo Banner Full-Width -->
     <section id="promo" class="promo">
       <div class="promo-left">
         <h4>Promo Eksklusif: Oktober Sale</h4>
         <p>Dapatkan diskon hingga 30% untuk produk pilihan + gratis ongkir khusus hari ini.</p>
-        <div style="display:flex;gap:12px;align-items:center">
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
           <a class="btn" href="#produk">Belanja Sekarang</a>
           <span style="color:var(--muted);font-weight:600">Kode: OCTSOUND25</span>
         </div>
       </div>
-      <div style="min-width:240px;text-align:center">
-        <img src="https://images.unsplash.com/photo-1518441902110-8feb3b3f483b?auto=format&fit=crop&w=700&q=60" alt="promo" style="width:220px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.08)">
+      <div class="promo-right">
+        <img src="https://images.unsplash.com/photo-1518441902110-8feb3b3f483b?auto=format&fit=crop&w=1400&q=60" alt="promo">
       </div>
     </section>
 
+    <!-- Dukungan WhatsApp -->
     <section id="dukungan" class="section">
       <div class="wa-card">
         <div class="wa-icon" aria-hidden>
-          <!-- WhatsApp SVG icon -->
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20.52 3.478A11.957 11.957 0 0012 0C5.373 0 .002 5.373 0 12c0 2.118.555 4.177 1.607 6.005L0 24l6.56-1.652A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12 0-3.207-1.237-6.208-3.48-8.522z" fill="#25D366"/>
             <path d="M17.224 14.24c-.303-.152-1.786-.88-2.062-.98-.276-.102-.477-.152-.678.152-.2.303-.778.98-.954 1.18-.176.2-.352.226-.654.075-.303-.15-1.278-.466-2.433-1.498-.9-.802-1.508-1.793-1.684-2.096-.176-.303-.019-.466.134-.618.138-.137.303-.352.455-.529.152-.176.203-.303.304-.504.102-.2.05-.377-.025-.53-.075-.152-.678-1.634-.93-2.235-.245-.588-.494-.51-.678-.52l-.579-.01c-.2 0-.525.074-.8.377-.276.303-1.054 1.03-1.054 2.51 0 1.481 1.08 2.916 1.23 3.116.152.2 2.127 3.244 5.157 4.546 3.03 1.303 3.03.868 3.573.815.542-.05 1.764-.715 2.014-1.404.251-.69.251-1.283.176-1.404-.075-.12-.276-.176-.58-.328z" fill="#fff"/>
@@ -167,6 +186,7 @@
       </div>
     </section>
 
+    <!-- Testimoni -->
     <section id="testimonials" class="testi-wrap">
       <h3>Testimoni Pengguna</h3>
       <div class="testi-grid">
@@ -189,8 +209,10 @@
         </div>
       </div>
     </section>
+
   </main>
 
+  <!-- Footer -->
   <footer>
     <div class="foot-inner">
       <div class="foot-col">
