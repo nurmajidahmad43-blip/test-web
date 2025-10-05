@@ -102,36 +102,126 @@
     </section>
 
     <section id="produk" class="section">
-      <h3>Produk Unggulan</h3>
-      <div class="grid">
-        <article class="card">
-          <img src="liberty4.png" alt="Liberty 4">
-          <div class="card-body">
-            <h4>Soundcore Liberty 4nc</h4>
-            <p class="muted">Earbuds true wireless — ANC adaptif & spatial audio</p>
-            <div class="price">Rp 2.499.000,00</div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="lifeq35.png" alt="Life Q35">
-          <div class="card-body">
-            <h4>Soundcore Life Q35</h4>
-            <p class="muted">Headphone over‑ear — Hi‑Res Audio & nyaman dipakai lama</p>
-            <div class="price">Rp 1.299.000</div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="r50i.png" alt="R50i">
-          <div class="card-body">
-            <h4>Soundcore R50i</h4>
-            <p class="muted">Earbuds ringkas — bass punchy & baterai tahan lama</p>
-            <div class="price">Rp 599.000</div>
-          </div>
-        </article>
+  <h3>Produk Unggulan</h3>
+  <div class="grid">
+    <article class="card">
+      <img src="liberty4.png" alt="Liberty 4">
+      <div class="card-body">
+        <h4>Soundcore Liberty 4nc</h4>
+        <p class="muted">Earbuds true wireless — ANC adaptif & spatial audio</p>
+        <div class="price">Rp 2.499.000,00</div>
+        <a href="#" class="btn-buy">Beli Sekarang</a>
       </div>
-    </section>
+    </article>
+
+    <article class="card">
+      <img src="lifeq35.png" alt="Life Q35">
+      <div class="card-body">
+        <h4>Soundcore Life Q35</h4>
+        <p class="muted">Headphone over-ear — Hi-Res Audio & nyaman dipakai lama</p>
+        <div class="price">Rp 1.299.000</div>
+        <a href="#" class="btn-buy">Beli Sekarang</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="r50i.png" alt="Soundcore R50i">
+      <div class="card-body">
+        <h4>Soundcore R50i</h4>
+        <p class="muted">Earbuds ringan — Suara jernih, bass bertenaga, dan tahan lama</p>
+        <div class="price">Rp 499.000</div>
+        <a href="#" class="btn-buy">Beli Sekarang</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<style>
+.section {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.section h3 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007aff;
+  margin-bottom: 50px;
+}
+
+/* Grid produk */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Kartu produk */
+.card {
+  background: linear-gradient(180deg, #ffffff 0%, #f5f7fa 100%);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+}
+
+/* Gambar produk */
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  background: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Deskripsi produk */
+.card-body {
+  padding: 25px 20px;
+}
+
+.card-body h4 {
+  font-size: 1.2rem;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.card-body .muted {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.card-body .price {
+  color: #007aff;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* Tombol beli */
+.btn-buy {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  background: #007aff;
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn-buy:hover {
+  background: #005bb5;
+}
+</style>
 
     <section id="promo" class="promo">
       <div class="promo-left">
